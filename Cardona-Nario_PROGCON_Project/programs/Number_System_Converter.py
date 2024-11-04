@@ -98,13 +98,14 @@ def main():
         
         base1 = input("What is your number's base? [2] [8] [10] [16] ") #determines the base of the inputted number
         base1 = numchecker(base1)
+        base1 = int(base1)
         base1 = not_that_value(num1, hex_checker(compare, base1))
 
         base2 = input("To which base? [2] [8] [10] [16] ") #determines the base the number is to be converted to
         base2 = numchecker(base2)
-
-        base1 = int(base1)
         base2 = int(base2)
+        
+        
         if base1 == base2: #checks if similar bases
             print("Similar bases! Choose again.")
             continue
