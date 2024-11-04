@@ -61,9 +61,10 @@ def numchecker(base): # Checks if num is a number, if not it asks you to reinput
 def not_that_value(num1, base1): #checks if the value cannot be an octal or an
     while True:
         try:
+            base1 = str(base1)
             num1 = int(str(num1),int(base1))
         except:
-            print("The base " + base1 + " cannot be a base to this number!")
+            print("The base " , base1 , " cannot be a base to this number!")
             base1 = input("Reinput your base: ")
             continue
         else:
@@ -72,12 +73,12 @@ def not_that_value(num1, base1): #checks if the value cannot be an octal or an
 def hex_checker(compare, base1): #if the number is a hexadecimal and the base is not 16, the function sets it into 16, if not, it bypasses
     while True:
         if (compare & (set(string.hexdigits) - set(string.digits))): 
-            if base1 != 16:
+            if base1 != "16":
                 print("This number is a hexadecimal value! The base is set to 16.") 
                 base1 = 16
                 return base1
-            elif base1 == 16:
-                break
+            elif base1 == "16":
+                return base1
         else:
             return base1
 
@@ -98,14 +99,13 @@ def main():
         
         base1 = input("What is your number's base? [2] [8] [10] [16] ") #determines the base of the inputted number
         base1 = numchecker(base1)
-        base1 = int(base1)
         base1 = not_that_value(num1, hex_checker(compare, base1))
 
         base2 = input("To which base? [2] [8] [10] [16] ") #determines the base the number is to be converted to
         base2 = numchecker(base2)
+
+        base1 = int(base1)
         base2 = int(base2)
-        
-        
         if base1 == base2: #checks if similar bases
             print("Similar bases! Choose again.")
             continue
