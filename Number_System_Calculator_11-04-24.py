@@ -41,7 +41,6 @@ def choicechecker(op): # Checks if op is a number, if not it asks you to reinput
             op = input("Reinput your choice [1] [2] [3] [4]: ") 
             continue 
         else:
-            int(op)
             return op
 
 def not_that_value(num1, num2, base): #checks if the value cannot be an octal or binary
@@ -72,13 +71,13 @@ def operations(f_num, s_num, op, base):
     f_num = int(f_num)
     s_num = int (s_num)
     remainder = 0
-    if op == 1:
+    if op == "1":
         ans = f_num + s_num
-    elif op == 2:
+    elif op == "2":
         ans = f_num - s_num
-    elif op == 3:
+    elif op == "3":
         ans = f_num * s_num
-    elif op == 4:
+    elif op == "4":
         if base == 2 or base == 8 or base == 16:
             ans, remainder = division(f_num, s_num, base)
         else:
