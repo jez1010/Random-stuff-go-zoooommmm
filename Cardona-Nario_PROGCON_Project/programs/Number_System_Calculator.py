@@ -58,11 +58,11 @@ def not_that_value(num1, num2, base): #checks if the value cannot be an octal or
 def hex_checker(num1, num2, base): #if the number is a hexadecimal and the base is not 16, the function sets it into 16, if not, it bypasses
     while True:
         if (set(num1) & (set(string.hexdigits) - set(string.digits))) or (set(num2) & (set(string.hexdigits) - set(string.digits))): 
-            if base != 16:
-                print("This number is a hexadecimal value! The base is set to 16.") 
-                base = 16
-                continue
-            elif base == 16:
+            if base != "16":
+                print("These numbers are a hexadecimal value! The base is set to 16.") 
+                base = "16"
+                return base
+            elif base == "16":
                 return base
         else:
             return base
