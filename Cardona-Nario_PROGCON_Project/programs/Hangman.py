@@ -65,5 +65,6 @@ def main():
             rounds = 0
     a = 3
     print(f"Your final score is {score} out of {a}.")
+
 if __name__ == "__main__": #allows the main Hub py to import without running the code 
     main()
